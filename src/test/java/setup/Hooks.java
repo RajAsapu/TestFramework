@@ -14,4 +14,13 @@ public class Hooks {
         new GenericWeMethods().takeScreenShot(scenario.getName());
         DriverBean.getEdriver().close();
     }
+    /*
+      @Before
+      public void init()
+      {
+      }
+      @Test - > Runs Test
+      @After
+      public void
+     */
 }

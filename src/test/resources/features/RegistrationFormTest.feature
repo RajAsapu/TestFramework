@@ -3,7 +3,7 @@ Feature: Registration page
 
   Background:
     Given the application is opened
-
+  @Registration
   Scenario Outline: User shall be able to register
     Given  the user navigates to the registration page
     When   the user enters details
@@ -14,11 +14,5 @@ Feature: Registration page
 
     Examples:
       | firstname | lastname | mobilenumber | email          | password       | confirmpassword |
-      | raj       | a        | 7279020202   | test@gmail.com | test@gmail.com | test@gmail.com  |
+      | raja      | aa        | 7279020202  | check@yahoo.com | check@yahoo.com | check@yahoo.com  |
 
-    /*
-     Date scenarios
-     Jenkins
-     Add some reporting
-     checkboxes,dropdown
-     */

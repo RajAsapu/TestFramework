@@ -1,5 +1,7 @@
 package functions.registration;
 
+import com.google.common.base.Verify;
+import cucumber.api.DataTable;
 import functions.GenericWeMethods;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
@@ -7,6 +9,9 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.events.EventFiringWebDriver;
 import setup.Constants;
 import setup.DriverBean;
+
+import java.util.List;
+import java.util.Map;
 
 /**
  * Created by asapu on 7/6/2017.
@@ -64,5 +69,24 @@ public class RegistrationMethods extends GenericWeMethods{
             e.printStackTrace();
         }
         actions.click(edriver.findElement(By.linkText("Sign Up"))).perform();
+    }
+
+    public void registerUser(DataTable table)
+    {
+        List<Map<String,String>> list = table.asMaps(String.class,String.class);
+        for(Map<String,String> row:list)
+        {
+            setFirstName(row.get("firstname"));
+            setLastName(row.get("lastname"));
+            setMobileNumber(row.get("mobilenumber"));
+            setEmail(row.get("email"));
+            setPassword(row.get("password"));
+            confirmPassword(row.get("confirmpassword"));
+        }
+    }
+
+    public void verifyIfUserIsRegistered()
+    {
+        Verify.verify(edriver.getCurrentUrl().contains("account"),"User is not registered");
     }
 }

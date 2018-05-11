@@ -56,4 +56,16 @@ public class LoginMethods extends GenericWeMethods {
         }
         actions.click(edriver.findElement(By.linkText("Login"))).perform();
     }
+
+    public void rememberMe(boolean checked)
+    {
+        WebElement element = getWeAtPosition(Constants.login_rememberMe,0);
+        if(checked && !element.isSelected())
+        {
+            element.click();
+        }else if(!checked && element.isSelected())
+        {
+            element.click();
+        }
+    }
 }

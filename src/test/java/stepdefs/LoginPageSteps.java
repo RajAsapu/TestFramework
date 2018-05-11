@@ -2,6 +2,7 @@ package stepdefs;
 
 import com.google.common.base.Verify;
 import cucumber.api.DataTable;
+import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
@@ -17,6 +18,7 @@ public class LoginPageSteps {
     {
         pageFactory=new PageFactory();
     }
+
     @Given("^the user is registered$")
     public void the_user_is_registered(DataTable table) {
         // Verify in data source if the credentials are present
@@ -34,6 +36,11 @@ public class LoginPageSteps {
         pageFactory.getLoginMethods().password(arg2);
     }
 
+    @And("^checks remember me$")
+    public void checks_remember_me()
+    {
+        pageFactory.getLoginMethods().rememberMe(true);
+    }
     @When("^clicks on login$")
     public void clicks_on_login()  {
         pageFactory.getLoginMethods().login();

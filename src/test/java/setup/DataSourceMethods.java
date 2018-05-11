@@ -22,7 +22,6 @@ public class DataSourceMethods {
                 for (Map<String, String> temp : creds) {
                     String credentials;
                     while((credentials=bufferedReader.readLine())!=null) {
-                        String usercreds[]=credentials.split(",");
                         if (credentials.contains(temp.get("username")) && credentials.contains(temp.get("password"))) {
                             System.out.println("Credentials are valid");
                             flag = true;

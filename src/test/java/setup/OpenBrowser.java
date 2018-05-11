@@ -19,6 +19,7 @@ public class OpenBrowser {
         switch (browser.toLowerCase())
         {
             case "chrome":
+//                System.setProperty("chrome.webdriver.driver","C://")
                 ChromeDriverManager.getInstance().setup();
                 ChromeOptions options=new ChromeOptions();
                 options.addArguments("--incognito");

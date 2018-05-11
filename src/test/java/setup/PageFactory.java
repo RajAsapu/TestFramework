@@ -1,5 +1,6 @@
 package setup;
 
+import functions.hotel.HotelMethods;
 import functions.login.LoginMethods;
 import functions.registration.RegistrationMethods;
 
@@ -9,6 +10,7 @@ import functions.registration.RegistrationMethods;
 public class PageFactory {
     private LoginMethods loginMethods = null;
     private RegistrationMethods registrationMethods = null;
+    private HotelMethods hotelMethods = null;
 
     public LoginMethods getLoginMethods()
     {
@@ -20,5 +22,11 @@ public class PageFactory {
     {
         registrationMethods = new RegistrationMethods();
         return registrationMethods;
+    }
+
+    public HotelMethods getHotelMethods()
+    {
+        hotelMethods = new HotelMethods();
+        return hotelMethods;
     }
 }
